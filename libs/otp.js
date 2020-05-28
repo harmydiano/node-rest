@@ -5,6 +5,7 @@ module.exports = (app)=> {
 
     const redis = require('redis');
     const generateOTP = require('./generator/index')
+    const enocodeData = require('./encode')(app)
     
     const redisPort = process.env.REDIS_PORT
     const redisHost = process.env.REDIS_HOST
@@ -69,7 +70,7 @@ module.exports = (app)=> {
                 if (result == otp){
                     console.log("OTP validation OK")
                     //client.del(mobile)
-                    res.status(200).json({status:true, message: 'OTP validated successfully' });
+                    res.status(200).json({status:true, message: `OTP validated successfully \n Token:${enocodeData(mobile)}` });
                 }else{
                     console.log("OTP validation Failed")
                     console.log(result, otp)

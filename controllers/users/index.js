@@ -11,12 +11,7 @@ module.exports = (app)=>{
 
     const otp = require('../../libs/otp')(app)
 
-    const enocodeData = (user) => {
-        token = jwt.sign({userId:user}, config.secret, {
-            expiresIn: '3650d'
-        })
-        return token
-    }
+    const enocodeData = require('../../libs/encode')(app)
 
 
     const Create = async (req, res) =>{
@@ -81,7 +76,7 @@ module.exports = (app)=>{
                 if (!resp){
                     res.status(400).json({status:false, message:'Password Incorrect'})
                 }
-                res.status(200).json({status:true, message:"Login Success", token:enocodeData(resp._id)})
+                res.status(200).json({status:true, message:"Login Success", token:enocodeData(phoneNumber)})
             })
             .catch(error =>
                 {
