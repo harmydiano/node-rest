@@ -1,5 +1,5 @@
 {
-  "name": "swipe-credit-early",
+  "name": "node-rest-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SwipeMAX/swipe-credit-early-access-api.git"
+    "url": "git+https://github.com/harmydiano/node-rest.git"
   },
-  "author": "swipe",
+  "author": "Hamid",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SwipeMAX/swipe-credit-early-access-api/issues"
+    "url": "https://github.com/harmydiano/node-rest/issues"
   },
-  "homepage": "https://github.com/SwipeMAX/swipe-credit-early-access-api#readme",
+  "homepage": "https://github.com/harmydiano/node-rest#readme",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "bcrypt": "^4.0.1",
